@@ -3,7 +3,7 @@
   "extensions": [
     {
       "area": "Page",
-      "componentName": "HelloWorld",
+      "componentName": "Routes",
       "route": "hello",
       "navigationNode": {
         "label": "Hello World Plugin",

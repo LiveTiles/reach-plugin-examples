@@ -7,6 +7,6 @@
 
 1. `npm run build`
 
-# How to publish to dev:
+# How to publish to a reach subscription:
 
-1. `npm run publish:dev`
+1. `npm run publish-web`
