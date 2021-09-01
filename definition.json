@@ -1,0 +1,21 @@
+{
+  "pluginId": "reach-plugin-router-example",
+  "extensions": [
+    {
+      "area": "Page",
+      "componentName": "HelloWorld",
+      "route": "hello",
+      "navigationNode": {
+        "label": "Hello World Plugin",
+        "translations": {
+          "de": "Hallo Welt Plugin"
+        },
+        "iconName": "WebAppBuilderFragment"
+      }
+    }
+  ],
+  "settings": {
+    "greetingLabel": "Heya!",
+    "fontColor": "yellow"
+  }
+}
