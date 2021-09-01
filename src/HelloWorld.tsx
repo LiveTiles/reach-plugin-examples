@@ -65,6 +65,9 @@ const WizardsPage: FC = () => {
 };
 
 const Menu: FC = ({}) => {
+  // This will be improved in the future.
+  // There will be a helper function exported from @reach/core that
+  // helps to build the correct base path.
   const match = useRouteMatch();
   const handle = match.path.split("/")[1];
   const pluginRoute = match.path.split("/")[2];
