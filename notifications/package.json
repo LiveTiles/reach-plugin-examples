@@ -8,7 +8,8 @@
     "publish": "reach-plugin-scripts publish",
     "publish-web": "reach-plugin-scripts publishWeb",
     "link-to-subscription": "reach-plugin-scripts linkToSubscription",
-    "generate-api-key": "reach-plugin-scripts generateApiKey"
+    "generate-api-key": "reach-plugin-scripts generateApiKey",
+    "send-notification": "node ./scripts/send-notification.js"
   },
   "author": "",
   "license": "ISC",
@@ -21,5 +22,8 @@
     "@types/styled-components": "5.1.0",
     "babel-preset-react-app": "10.0.0",
     "typescript": "4.4.3"
+  },
+  "devDependencies": {
+    "got": "^11.8.2"
   }
 }

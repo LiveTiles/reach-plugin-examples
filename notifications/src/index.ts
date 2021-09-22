@@ -1,1 +1,1 @@
-export { HelloWorld } from './HelloWorld';
+export const noop = 0;
