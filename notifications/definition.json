@@ -1,0 +1,25 @@
+{
+  "pluginId": "notifications",
+  "extensions": [
+    {
+      "area": "Page",
+      "componentName": "HelloWorld",
+      "route": "hello",
+      "navigationNode": {
+        "label": "Hello World Plugin",
+        "translations": {
+          "de": "Hallo Welt Plugin"
+        },
+        "iconName": "WebAppBuilderFragment"
+      }
+    }
+  ],
+  "notifications": [
+    {
+      "key": "default-notification",
+      "title": "Plugin Notification",
+      "possibleNotificationTypes": ["MobilePush", "Email", "BrowserPush"]
+    }
+  ]
+  
+}
