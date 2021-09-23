@@ -4,60 +4,44 @@ import { useCurrentUser } from "@reach/core";
 import { Page } from "@reach/chrome";
 import { NewsList } from "@livetiles/reach-components-react";
 import { usePluginSettings } from "@reach/core";
-import { Route, Switch, useRouteMatch } from "react-router-dom";
+import { Redirect, Route, Switch, useRouteMatch } from "react-router-dom";
 import { NavLinkSidebarItem } from "@reach/chrome";
 
-export const Routes: FC = () => {
+export const TaskRoutes: FC = () => {
   const match = useRouteMatch();
 
   return (
     <Switch>
-      <Route path={match.url + "/knights"} component={KnightsPage} />
-      <Route path={match.url + "/wizards"} component={WizardsPage} />
-      <Route path={match.url} exact={true} component={DefaultPage} />
+      <Route path={match.url + "/pending"} component={PendingTasksPage} />
+      <Route path={match.url + "/completed"} component={CompletedTasksPage} />
+      <Redirect path={match.url} exact={true} to={match.url + "/pending"} />
       <Route component={NotFoundPage} />
     </Switch>
   );
 };
 
-const DefaultPage: FC = () => {
-  const { greetingLabel } = usePluginSettings<{ greetingLabel: string }>();
-  const user = useCurrentUser();
+const PendingTasksPage: FC = () => {
   return (
-    <Page title="Hello World" submenuContents={<Menu />}>
+    <Page title="Pending Tasks" submenuContents={<Menu />}>
       <Host>
         <Container>
-          <Title>
-            {greetingLabel || "Welcome,"} {user.displayName}!
-          </Title>
-          <SubTitle>Kindom News</SubTitle>
-          <NewsList />
+          <Title>Open Tasks</Title>
+          <SubTitle>All the work I still have to do</SubTitle>
         </Container>
       </Host>
     </Page>
   );
 };
 
-const KnightsPage: FC = () => {
+const CompletedTasksPage: FC = () => {
   return (
-    <Page title="Knights" submenuContents={<Menu />}>
+    <Page title="Completed Tasks" submenuContents={<Menu />}>
       <Host>
         <Container>
-          <Title>Knights</Title>
-          <SubTitle>Stuff about the nights and other thugs</SubTitle>
-        </Container>
-      </Host>
-    </Page>
-  );
-};
-
-const WizardsPage: FC = () => {
-  return (
-    <Page title="Wizards" submenuContents={<Menu />}>
-      <Host>
-        <Container>
-          <Title>Wizards</Title>
-          <SubTitle>All you need to know about the mighty wizards</SubTitle>
+          <Title>Completed Tasks</Title>
+          <SubTitle>
+            All these tasks have already been completed. Yeah! 🎉
+          </SubTitle>
         </Container>
       </Host>
     </Page>
@@ -75,14 +59,14 @@ const Menu: FC = ({}) => {
   return (
     <div>
       <NavLinkSidebarItem
-        route={`/${handle}/${pluginRoute}/knights`}
-        title="Knights"
-        iconName="DefenderApp"
+        route={`/${handle}/${pluginRoute}/pending`}
+        title="Pending Tasks"
+        iconName="BulletedList2"
       />
       <NavLinkSidebarItem
-        route={`/${handle}/${pluginRoute}/wizards`}
-        title="Wizards"
-        iconName="AutoEnhanceOn"
+        route={`/${handle}/${pluginRoute}/completed`}
+        title="Completed Tasks"
+        iconName="Accept"
       />
     </div>
   );

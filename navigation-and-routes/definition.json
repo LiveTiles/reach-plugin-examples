@@ -1,21 +1,17 @@
 {
-  "pluginId": "reach-plugin-router-example",
+  "pluginId": "tasks-plugin",
   "extensions": [
     {
       "area": "Page",
-      "componentName": "Routes",
-      "route": "hello",
+      "componentName": "TaskRoutes",
+      "route": "tasks",
       "navigationNode": {
-        "label": "Hello World Plugin",
+        "label": "Tasks",
         "translations": {
-          "de": "Hallo Welt Plugin"
+          "de": "Aufgaben"
         },
-        "iconName": "WebAppBuilderFragment"
+        "iconName": "TaskLogo"
       }
     }
-  ],
-  "settings": {
-    "greetingLabel": "Heya!",
-    "fontColor": "yellow"
-  }
+ ]
 }
