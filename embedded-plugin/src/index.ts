@@ -1,0 +1,1 @@
+export { EmbeddedPluginSample } from './EmbeddedPluginSample';
