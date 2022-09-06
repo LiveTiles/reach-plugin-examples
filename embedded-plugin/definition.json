@@ -1,0 +1,22 @@
+{
+  "pluginId": "embedded-plugin-test",
+  "extensions": [
+    {
+      "area": "ItemEditor",
+      "componentName": "EmbeddedPluginSample",
+      "properties": {
+        "buttonLabel": {
+          "defaultLabel": "Insert News List",
+          "translations": {
+            "en": ""
+          }
+        },
+        "iconName": "News"
+      }
+    }
+  ],
+  "settings": {
+    "greetingLabel": "Heya!",
+    "fontColor": "yellow"
+  }
+}
